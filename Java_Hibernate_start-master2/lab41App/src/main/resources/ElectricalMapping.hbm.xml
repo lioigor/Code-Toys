@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.lioigor22.electrical.ElectricalAppliance" table="ElectricalAppliance">
+
+		<id name="id" column="ID" unsaved-value="null">
+			<generator class="increment" />
+		</id>
+		<property name="pluggedIn" column="pluggedIn" />
+		<property name="voltage" column="voltage" />
+		<property name="amperage" column="amperage" />
+
+		<joined-subclass name="com.lioigor22.electrical.Tv"
+			table="Tv">
+			<key column="electricalKey" />
+			<property name="name" column="name" />
+			<property name="turnONTv" column="turnONTv" />
+		</joined-subclass>
+
+		<joined-subclass name="com.lioigor22.electrical.Microwave"
+			table="Microwave">
+			<key column="electricalKey" />
+			<property name="name" column="name" />
+			<property name="timerMillis" column="timerMillis" />
+			<property name="startTime" column="startTime" />
+			<property name="rotate" column="rotate" />
+		</joined-subclass>
+
+	</class>
+</hibernate-mapping>

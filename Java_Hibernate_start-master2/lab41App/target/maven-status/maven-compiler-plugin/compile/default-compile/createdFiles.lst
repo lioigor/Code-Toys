@@ -1,0 +1,16 @@
+com\lioigor22\electrical\ElectricalSaver.class
+com\lioigor22\planes\Chassis.class
+com\lioigor22\hibernate\DAO.class
+com\lioigor22\hibernate\HibernateRunner.class
+com\lioigor22\planes\Plane.class
+com\lioigor22\hibernate\PlaneDAO.class
+com\lioigor22\electrical\Microwave.class
+com\lioigor22\planes\PlanesSaver.class
+com\lioigor22\planes\Wing.class
+com\lioigor22\hibernate\MicrowaveDAO.class
+com\lioigor22\hibernate\HibernateUtil.class
+com\lioigor22\electrical\Tv.class
+com\lioigor22\hibernate\ElectricalAppliancesDAO.class
+com\lioigor22\electrical\ElectricalAppliance.class
+com\lioigor22\planes\WrongChassisRadiusException.class
+com\lioigor22\hibernate\TvDAO.class

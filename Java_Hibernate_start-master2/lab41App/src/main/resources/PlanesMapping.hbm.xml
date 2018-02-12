@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.lioigor22.planes.Wing" table="Wing">
+
+		<id name="id" column="ID" unsaved-value="null">
+			<generator class="increment" />
+		</id>
+		<property name="size" column="size" />
+		<property name="ascensionalPower" column="ascensionalPower" />
+		<property name="fly" column="fly" />
+
+		<joined-subclass name="com.lioigor22.planes.Plane"
+			table="Plane">
+			<key column="planeKey" />
+			<property name="name" column="name" />
+			<property name="destination" column="destination" />
+
+			<component name="chassis" class="com.lioigor22.planes.Chassis">
+				
+				<property name="radius" column="radius" />
+			</component>
+
+		</joined-subclass>
+
+		
+
+	</class>
+</hibernate-mapping>

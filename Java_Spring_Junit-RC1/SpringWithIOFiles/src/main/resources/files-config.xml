@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xsi:schemaLocation="
+      http://www.springframework.org/schema/beans 
+      http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+      http://www.springframework.org/schema/context 
+      http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<context:property-placeholder location="classpath:address.properties" />
+	
+	<bean id="fileinptxt" class="java.io.File">
+		<constructor-arg value="${inptxt.url}"/>
+	</bean>
+	<bean id="fileouttxt" class="java.io.File">
+		<constructor-arg value="${outtxt.url}"/>
+	</bean>
+	<bean id="fileinpbin" class="java.io.File">
+		<constructor-arg value="${inpbin.url}"/>
+	</bean>
+	<bean id="fileoutbin" class="java.io.File">
+		<constructor-arg value="${outbin.url}"/>
+	</bean>
+	<bean id="filesingle" class="java.io.File">
+		<constructor-arg value="${single.url}"/>
+	</bean>
+	
+	<bean id="numstordaotxt" class="com.lioigor22.daoNumbers.NumbersStorageDAOFileTxt">
+	</bean>
+	<bean id="numstordaobin" class="com.lioigor22.daoNumbers.NumbersStorageDAOFileBin">
+	</bean>
+	
+	<bean id="task1" class="com.lioigor22.SimpleTest1">
+		<constructor-arg ref="fileinptxt"/>
+		<constructor-arg ref="fileouttxt"/>
+	</bean>
+	<bean id="task2" class="com.lioigor22.SimpleTest2">
+		<constructor-arg ref="fileinpbin"/>
+		<constructor-arg ref="fileoutbin"/>
+	</bean>
+	<bean id="task3" class="com.lioigor22.SimpleTest3">
+		<constructor-arg ref="fileinpbin"/>
+	</bean>
+	<bean id="task4" class="com.lioigor22.SimpleTest4">
+		<constructor-arg ref="fileinptxt"/>
+		<constructor-arg ref="fileoutbin"/>
+	</bean>
+	<bean id="task5" class="com.lioigor22.SimpleTest5">
+		<constructor-arg ref="fileinpbin"/>
+		<constructor-arg ref="fileouttxt"/>
+	</bean>
+	
+	
+	
+	<bean id="strstordaobin" class="com.lioigor22.daoString.StringStorageDAOFileBin">
+	</bean>
+	<bean id="filestrdatinp" class="java.io.File">
+		<constructor-arg value="${strdatinp.url}"/>
+	</bean>
+	<bean id="filestrdatout" class="java.io.File">
+		<constructor-arg value="${strdatout.url}"/>
+	</bean>
+	
+	<bean id="job2task" class="com.lioigor22.Task2SimpleTest">
+		<constructor-arg ref="filestrdatinp"/>
+		<constructor-arg ref="filestrdatout"/>
+	</bean>
+	
+
+	
+
+</beans>
